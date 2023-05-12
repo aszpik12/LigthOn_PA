@@ -1,0 +1,25 @@
+main{
+    width: 80%;
+    margin: auto;
+}
+
+div{
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    border-radius: 200px;
+    margin-bottom: 100px;
+}
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.vilagit{
+    background-color: green;
+}
+
+.nemvilagit{
+    background-color: antiquewhite;
+}
