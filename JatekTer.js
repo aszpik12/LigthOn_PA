@@ -13,9 +13,7 @@ class JatekTer {
       const lampa = new Lampa(ARTICLE, this.#allapotLista[i], i);
     }
 
-    $(window).on("kapcsolas", (event) => {
-
-    });
+    $(window).on("kapcsolas", (event) => {});
   }
 
   setAllapotLista() {

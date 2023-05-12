@@ -3,17 +3,17 @@ class Lampa {
   #id;
   #divElem;
   constructor(szuloElem, villagit, i) {
-    this.#allapot = villagit;
+    this.#allapot = villagit == 1;
     this.#id = i;
-    if (this.#allapot === 1) {
+    if (this.#allapot) {
       szuloElem.append(`
-          <div class="vilagit">
+          <div id="id${this.#id}" class="vilagit">
               
           </div>
       `);
     } else {
       szuloElem.append(`
-      <div class="nemvilagit">
+      <div class="sotet">
           
       </div>
   `);
@@ -27,17 +27,19 @@ class Lampa {
   }
 
   setAllapot() {
-    const divvilagit = document.querySelector("vilagit");
-    const divnemvilagit = document.querySelector("nemvilagit");
-
     this.#szinBeallit();
   }
 
   #szinBeallit() {
-    if (this.class == "vilagit") {
-      divvilagit.classList.replace("vilagit", "nemvilagit");
+    const VILAGOS = document.querySelector(".vilagit");
+    const SOTET = document.querySelector(".sotet");
+
+    if (this.#allapot) {
+      VILAGOS.classList.replace("vilagit", "sotet");
+      this.#allapot == false;
     } else {
-      divnemvilagit.classList.replace("nemvilagit", "vilagit");
+      SOTET.classList.replace("sotet", "vilagit");
+      this.#allapot == true;
     }
   }
 
